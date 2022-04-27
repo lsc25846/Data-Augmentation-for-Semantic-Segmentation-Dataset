@@ -83,9 +83,9 @@ def augment_data(images, masks, save_path, augment=True):
 
             image_path = os.path.join(save_path,  tmp_img_name)
             mask_path = os.path.join(save_path,  tmp_mask_name)
-
+            mask_gray=cv2.cvtColor(m, cv2.COLOR_BGR2GRAY)
             cv2.imwrite(image_path, i)
-            cv2.imwrite(mask_path, m)
+            cv2.imwrite(mask_path, mask_gray)
 
             idx += 1
 
